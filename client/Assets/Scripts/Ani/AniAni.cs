@@ -1,18 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AniAni : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Action act;
+
+    public AniAni(Action action)
     {
-        
+        act = action;
     }
 
-    // Update is called once per frame
+    public string Name { get; set; }
+    public bool Started { get; set; }
+    public bool Ended { get; set; }
+
+    void Start()
+    {
+        Started = true;
+        Ended = false;
+    }
+
     void Update()
     {
-        
+        if (!Started)
+            throw new Exception("Not started!!!");
+        act();
+        Ended = true;
     }
 }
