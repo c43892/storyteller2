@@ -3,30 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AniAni : MonoBehaviour
+public class AniAni : IAni
 {
-    Action act;
+    Animator anim;
 
-    public AniAni(Action action)
+    public AniAni(Animator animator)
     {
-        act = action;
+        anim = animator;
     }
 
     public string Name { get; set; }
     public bool Started { get; set; }
     public bool Ended { get; set; }
 
-    void Start()
+    public void Start()
     {
         Started = true;
         Ended = false;
     }
 
-    void Update()
+    public void Update(float timeElapsed)
     {
         if (!Started)
             throw new Exception("Not started!!!");
-        act();
+        anim.Update(Time.deltaTime);
         Ended = true;
     }
 }

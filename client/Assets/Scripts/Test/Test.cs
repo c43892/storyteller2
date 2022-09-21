@@ -69,6 +69,8 @@ public class Test : MonoBehaviour
 
         ParalAni paralAni;
         SeqAni seqAni;
+        AniAni noteAni;
+        AniAni momAni;
 
         seqAni = new SeqAni(
             new DelayAni(1),
@@ -133,10 +135,15 @@ public class Test : MonoBehaviour
             new OpAni(() => { washer.FullUncolored = true; dryer.FullUncolored = true; })
         );
 
+        noteAni = new AniAni(notes.Get("note1").ColoredGo.GetComponent<Animator>());
+        momAni = new AniAni(mom.Get("head").ColoredGo.GetComponent<Animator>());
+
         paralAni = new ParalAni(
             new OpAni(() => { mom.FullColored = true; mom.Get("head").Shown = true; mom.Get("body").Shown = true; mom.Get("left hand").Shown = true; mom.Get("right hand").Shown = true; mom.Get("left leg").Shown = true; mom.Get("right leg").Shown = true;
                 mom.Get("skirt").Shown = true; notes.FullColored = true; notes.Get("note1").Shown = true; notes.Get("note2").Shown = true; notes.Get("note3").Shown = true; basket.FullColored = true; basket.Get("basket three").Shown = true;
             }),
+            noteAni,
+            momAni,
             seqAni
         );
 
