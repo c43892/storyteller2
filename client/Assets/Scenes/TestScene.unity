@@ -286,6 +286,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 957671345}
     m_Modifications:
+    - target: {fileID: 2243943456446164237, guid: a4fe796a61ebbd14aa4f2509d2958d83, type: 3}
+      propertyPath: m_Name
+      value: aniRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914252163794571881, guid: a4fe796a61ebbd14aa4f2509d2958d83, type: 3}
+      propertyPath: m_Name
+      value: aniRoot
+      objectReference: {fileID: 0}
     - target: {fileID: 8285848814773950946, guid: a4fe796a61ebbd14aa4f2509d2958d83, type: 3}
       propertyPath: m_Name
       value: MissingSocks

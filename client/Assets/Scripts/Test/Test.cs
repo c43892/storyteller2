@@ -135,8 +135,8 @@ public class Test : MonoBehaviour
             new OpAni(() => { washer.FullUncolored = true; dryer.FullUncolored = true; })
         );
 
-        noteAni = new AniAni(notes.Get("note1").ColoredGo.GetComponent<Animator>());
-        momAni = new AniAni(mom.Get("head").ColoredGo.GetComponent<Animator>());
+        noteAni = new AniAni(notes.Get("note1"));
+        momAni = new AniAni(mom.Get("head"));
 
         paralAni = new ParalAni(
             new OpAni(() => { mom.FullColored = true; mom.Get("head").Shown = true; mom.Get("body").Shown = true; mom.Get("left hand").Shown = true; mom.Get("right hand").Shown = true; mom.Get("left leg").Shown = true; mom.Get("right leg").Shown = true;

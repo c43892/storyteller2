@@ -12,6 +12,9 @@ public class AniAni : IAni
         anim = animator;
     }
 
+    public AniAni(BaseObjects go)
+        : this(go.GetComponentInChildren<Animator>()) { }
+
     public string Name { get; set; }
     public bool Started { get; set; }
     public bool Ended { get; set; }
@@ -26,6 +29,7 @@ public class AniAni : IAni
     {
         if (!Started)
             throw new Exception("Not started!!!");
+
         anim.Update(Time.deltaTime);
         Ended = true;
     }
